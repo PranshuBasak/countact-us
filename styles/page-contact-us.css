@@ -1,0 +1,32 @@
+#content-section{
+	padding: 60px 0 315px;
+}
+
+#wpgmza_map,
+.wpgmza_map{
+	margin: 5px 0 30px;
+}
+
+#form-area{
+	padding-top: 75px;
+}
+
+#form-area h3{
+	text-align: center;
+}
+
+#form-area div.gform_wrapper textarea{
+	height: 165px;
+}
+
+#form-area div.gform_wrapper{
+	margin-bottom: 10px;
+}
+
+#form-area .grecaptcha-text{
+	margin-bottom: 37px;
+}
+
+.ginput_recaptcha{
+	transform: scale(1);
+}
