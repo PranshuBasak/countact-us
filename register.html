@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Labtician Ophthalmics</title>
+    <link rel="stylesheet" href="./styles/registration.css">
+    <!-- Creatio Integration Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://webtracking-v01.creatio.com/JS/track-cookies.js"></script>
+    <script src="https://webtracking-v01.creatio.com/JS/create-object.js"></script>
+</head>
+<body>
+    <div class="site-container">
+        <div class="registration-form-container">
+            <h2>Register with Labtician Ophthalmics</h2>
+            <form id="registration-form" class="registration-form" onSubmit="createObject(); return false">
+                <div class="form-group">
+                    <label for="fullName">*Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">*Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">*Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                
+                <div class="form-group">
+                    <label for="jobTitle">Job Title</label>
+                    <input type="text" id="jobTitle" name="jobTitle">
+                </div>
+                
+                <div class="form-group">
+                    <label for="industry">Industry</label>
+                    <select id="industry" name="industry">
+                        <option value="">Select Industry</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="pharmaceuticals">Pharmaceuticals</option>
+                        <option value="medical_devices">Medical Devices</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <input type="text" id="country" name="country">
+                </div>
+                
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city">
+                </div>
+                
+                <div class="form-group">
+                    <label for="zip">ZIP/Postal Code</label>
+                    <input type="text" id="zip" name="zip">
+                </div>
+                
+                <div class="form-group">
+                    <label for="comments">Additional Comments</label>
+                    <textarea id="comments" name="comments" rows="4"></textarea>
+                </div>
+                
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="useEmail" name="useEmail">
+                    <label for="useEmail">I agree to receive email communications from Labtician Ophthalmics</label>
+                </div>
+                
+                <button type="submit" class="submit-button">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        var config = {
+            fields: {
+                "Name": "#fullName",
+                "Email": "#email",
+                "Zip": "#zip",
+                "MobilePhone": "#phone",
+                "Company": "#company",
+                "Industry": "#industry",
+                "FullJobTitle": "#jobTitle",
+                "UseEmail": "#useEmail",
+                "City": "#city",
+                "Country": "#country",
+                "Commentary": "#comments"
+            },
+            contactFields: {
+                "FullName": "#fullName",
+                "Phone": "#phone",
+                "Email": "#email"
+            },
+            customFields: {},
+            landingId: "7f8d6674-344a-4795-ba57-516f14a6e6ef", // Replace with your actual landing ID
+            serviceUrl: "https://157897-crm-bundle.creatio.com/0/ServiceModel/GeneratedObjectWebFormService.svc/SaveWebFormObjectData",
+            redirectUrl: "thank-you.html"
+        };
+
+        function createObject() {
+            landing.createObjectFromLanding(config);
+        }
+
+        function initLanding() {
+            landing.initLanding(config);
+        }
+
+        jQuery(document).ready(initLanding);
+    </script>
+</body>
+</html>
